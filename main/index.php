@@ -98,11 +98,10 @@
                     </tr>
                 <?php }
                 ?>
-
-
             </tbody>
         </table>
     </div>
 </body>
-
+<!-- Código desarrollado por Allison Molano -->
+<!-- Todos los derechos de autor están reservados para este código. -->
 </html>
