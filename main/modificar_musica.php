@@ -9,7 +9,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Genero = $_POST["genero"];
     $FechaLanzamiento = $_POST["FechaLanzamiento"];
 
-    // Actualizar la base de datos aquí usando una consulta UPDATE
     $sql = "UPDATE singles SET TituloSingle='$TituloSingle', Cancion='$Cancion', Autor='$Autor', Genero='$Genero', FechaLanzamiento='$FechaLanzamiento' WHERE id=$id";
     
     if ($conexion->query($sql) === TRUE) {
@@ -41,6 +40,8 @@ $sql = $conexion->query("SELECT * FROM singles WHERE id=$id");
 <body>
     <form class="col-6 mx-auto" method="POST">
         <h5 class="text-center alert alert-secondary">Modificar tu álbum</h5>
+        <input type="hidden" name="id" value="<?= $_GET["id"] ?>">
+
         <?php
         include "controllers/modificar_musica.php";
         while ($datos = $sql->fetch_object()){ ?>

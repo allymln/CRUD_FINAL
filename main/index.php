@@ -13,13 +13,24 @@
 </head>
 
 <body>
+    <script>
+        function eliminar(){
+            var respuesta=confirm("Estas seguro de querer eliminar este album?");
+            return respuesta;   
+
+        }
+    </script>
     <div class="container">
         <br>
         <br>
-
         <h1 class="text-center">DistroRich</h1>
         <br>
         <h3 class="text-center">Registra tu musica... ¡YA!</h3>
+        <?php
+        
+        include "modelo/conexion.php";
+        include "controllers/eliminar_musica.php";
+        ?>
         <br>
         <form class="col-6 mx-auto" method="POST">
             <div class="form-row">
@@ -53,7 +64,7 @@
     </div>
     <div>Lista de tu musica registrada.
         <?php
-    include "modelo/conexion.php";
+    
     include "controllers/registro_musica.php";
     ?>
         <table class="table">
@@ -81,7 +92,8 @@
                         <td><?= $datos->FechaLanzamiento ?></td>
                         <td>
                             <a href="modificar_musica.php?id=<?= $datos->id ?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
-                            <a href="controllers/eliminar_musica.php" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
+                            <a onclick="return eliminar()" href="index.php?id=<?= $datos->id ?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
+
                         </td>
                     </tr>
                 <?php }
