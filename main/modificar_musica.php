@@ -78,5 +78,6 @@ $sql = $conexion->query("SELECT * FROM singles WHERE id=$id");
     
         </form>
 </body>
-
+<!-- Código desarrollado por Allison Molano -->
+<!-- Todos los derechos de autor están reservados para este código. -->
 </html>
